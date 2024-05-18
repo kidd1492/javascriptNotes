@@ -1,0 +1,2 @@
+# javascriptNotes
+Basic JavaScript examples
