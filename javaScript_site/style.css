@@ -1,0 +1,17 @@
+body{
+    text-align: center;
+    background-color: rgba(236, 235, 245, 0.705);
+}
+
+.textContainer{
+    text-align: left;
+    font-size: 1.2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    display: grid;
+    width: auto;
+    padding: 20px;
+    margin: 20px 0px 0px 10px;
+    border: 4px solid black;
+    border-radius: 15px;
+    background-color:rgba(255, 255, 255, 0.705)
+}
