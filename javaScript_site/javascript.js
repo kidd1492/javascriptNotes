@@ -27,7 +27,7 @@ function getExamples(example){
             const codeExVariable = 'let variable = 8\; <br/>\
                                 const variable = 3.14\;<br/>\
                                 var variable = "A string"\;<br/><br/><br/>\
-                                <a href="html/functions.html">Example in Action</a>';
+                                ';
                             
 
             textContainer.innerHTML = textVariable;
@@ -48,7 +48,9 @@ function getExamples(example){
                 ....Code to exicute;<br>
                 ....//\Functions can return a value using the return keyword.<br/>
                 ....return result;<br/>
-                }`;
+                }<br/>
+                <a href="functions.html">Example in Action</a>
+                `;
 
             textContainer.innerHTML = textFunction;
             scriptContainer.innerHTML = codeExFunction;
