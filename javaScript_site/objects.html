@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="veiwport" content="width=device-qwidth, initial-scale=1.0">
+        <title>Objects</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <div id="titleContainer">
+        <h1 id="titleEx">Welcome to Our JavaScript Reference Hub!</h1>
+        <h1>Objects</h1><br/><br/>
+        <a href="index.html"><button type="button">Back</button></a>
+    </div>
+   
+
+<body>
+               
+<div class="textContainer">
+
+<h3>Hello I am an Object</h3>
+<p>I am an object that represents a person. I have properties (key-value pairs) such as<br/>
+    a name, - name: "Alice"<br/> an age -- age: 30</p>
+    <pre>
+    const person = {
+        name: "Alice",
+        age: 30,
+        greet: function() {
+            console.log(`Hello, I'm ${this.name}!`);
+        }
+    };</pre>
+
+<p>You can access my properties using dot notation  </p>
+    <button onclick="showName()">person.name</button>
+    <button onclick="showAge()">person.age</button>
+
+
+
+<h2 id="dotName"></h2>
+<h2 id="dotAge"></h2>
+
+</div>
+
+<div class="textContainer">
+
+    <h3>I can do stuff!!</h3>
+    
+    
+    <p>Like tell you my name</p>
+        <button onclick="tellName()">person.greet</button>
+           
+    <h2 id="dotGreet"></h2>
+    </div>
+
+
+    <script>
+        let dotName = document.getElementById('dotName');
+        const person = {
+            name: "Alice",
+            age: 30,
+            greet: function() {
+                return `Hello, I'm ${this.name}!`;
+            }
+        };
+
+        const showName = () => dotName.innerHTML = person.name;
+        const showAge = () => dotAge.innerHTML = person.age;
+        function tellName(){
+            dotGreet.innerHTML = person.greet();
+        } 
+    </script>
+
+</body>
+</html>

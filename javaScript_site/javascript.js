@@ -65,20 +65,29 @@ function functionName(argument, argument) {
             break;
 
         case 'objects':
-            const textObjects = `Anonymouse Functions:<br/><br/>
-                With anonymous function you can create functions without a name (anonymous functions).
-                In JavaScript, we often use them for specific purposes.<br/><br/>
-                <li>An anonymous function is created without an identifier (name).</li><br/>
-                <li>It’s defined using the function keyword followed by parentheses () and curly braces {}.</li><br/>
-                <li>Assign them to variables or use them directly.</li><br/>
-                <li>Anonymous functions help encapsulate code and prevent polluting the global scope.</li>
+            const textObjects = `What is an Object?<br/><br/>
+            An object is a composite data type that represents a collection of related data and functionality.
+            It allows you to group properties (key-value pairs) and methods (functions) together.<br/><br/>
+                <li>You can access object properties using dot notation or square brackets:</li>
+                <li>You can add or modify properties dynamically:</li><br/><br/>
+                this Keyword:<br/><br/>
+                <li>Inside an object method, this refers to the object itself.</li>
+                <li>It allows you to access object properties and methods from within the method.</li><br/><br/>
+                <a href="objects.html">Javascript Object Ex.</a>
                 `;
 
             const codeExObjects = 
-                `Anonymous function example:<br><br>
-                const myFunction = function() {<br/>
-                ....// Code here<br/>
-                };`;
+                `Object Literal Syntax:<br><br>
+<pre>
+const person = {
+    name: "Alice",
+    age: 30,
+    greet: function() {
+      console.log(\`Hello, I'm \${this.name}!\`);
+    }
+  };  
+</pre>
+                `;
         
             textContainer.innerHTML = textObjects ;
             scriptContainer.innerHTML = codeExObjects;
