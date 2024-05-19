@@ -2,7 +2,7 @@
 const titleEx = document.getElementById('titleEx');
 const textContainer = document.getElementById('textContainer');
 const scriptContainer = document.getElementById('scriptContainer');
-titleEx.style.backgroundColor = "red";
+
 
 function getExamples(example){
     switch(example){
@@ -24,10 +24,12 @@ function getExamples(example){
                                 <li>Use const for constants that won’t change.</li>\
                                 <li>Avoid using var due to its unpredictable behavior.</li></ul>";
 
-            const codeExVariable = 'let variable = 8\; <br/>\
-                                const variable = 3.14\;<br/>\
-                                var variable = "A string"\;<br/><br/><br/>\
-                                ';
+            const codeExVariable = 
+'<pre>\
+let variable = 8\;<br/>\
+const variable = 3.14\;<br/>\
+var variable = "A string"\;<br/>\
+</pre>';
                             
 
             textContainer.innerHTML = textVariable;
@@ -36,28 +38,34 @@ function getExamples(example){
         
         case 'function' : 
             const textFunction = `Function Declaration:<br/><br/>
-                <li>A function is defined using the function keyword followed by a name (identifier).</li><br/>
-                <li>It can take zero or more parameters (also known as arguments).</li><br/>
-                <li>The function body contains the code to be executed when the function is called.</li><br></br>
+            <p>Definition: A function is a named block of code that can be called \
+            (or invoked) to perform a specific action. It encapsulates a series of\ 
+            statements and can take input (called parameters) and produce output (called a return value).</p><br/>
+                <li>A function is an object</li>
+                <li>A function is defined using the function keyword followed by a name (identifier).</li>
+                <li>It can take zero or more parameters (also known as arguments).</li>
+                <li>The function body contains the code to be executed when the function is called.</li><br>
                 Function Call (Invocation):<br/><br/>\
-                <li>To execute a function, you “call” it by using its name followed by parentheses.</li><br/>
-                <li>Pass any required arguments inside the parentheses.</li>`;
+                <li>To execute a function, you “call” it by using its name followed by parentheses.</li>
+                <li>Pass any required arguments inside the parentheses.</li><br/><br/>
+                Functions in Javascript: <br/><br/><a href="functions.html">Types of Funtions in Javascript</a>`;
 
             const codeExFunction = `Javascript function example:<br><br>
-                function functionName(argument, argument) {<br>
-                ....Code to exicute;<br>
-                ....//\Functions can return a value using the return keyword.<br/>
-                ....return result;<br/>
-                }<br/>
-                <a href="functions.html">Example in Action</a>
+<pre>
+function functionName(argument, argument) {
+    Code to exicute;
+    //\Functions can return a value using the return keyword.
+    return result;
+}</pre><br/>
+                
                 `;
 
             textContainer.innerHTML = textFunction;
             scriptContainer.innerHTML = codeExFunction;
             break;
 
-        case 'anonymous':
-            const textAnonymous = `Anonymouse Functions:<br/><br/>
+        case 'objects':
+            const textObjects = `Anonymouse Functions:<br/><br/>
                 With anonymous function you can create functions without a name (anonymous functions).
                 In JavaScript, we often use them for specific purposes.<br/><br/>
                 <li>An anonymous function is created without an identifier (name).</li><br/>
@@ -66,14 +74,14 @@ function getExamples(example){
                 <li>Anonymous functions help encapsulate code and prevent polluting the global scope.</li>
                 `;
 
-            const codeExAnonymous = 
+            const codeExObjects = 
                 `Anonymous function example:<br><br>
                 const myFunction = function() {<br/>
                 ....// Code here<br/>
                 };`;
         
-            textContainer.innerHTML = textAnonymous ;
-            scriptContainer.innerHTML = codeExAnonymous;
+            textContainer.innerHTML = textObjects ;
+            scriptContainer.innerHTML = codeExObjects;
             break;
 
         case 'arrowFunction':
@@ -103,9 +111,9 @@ function getExamples(example){
             const textConditionals = ` Conditionals allow you to control the flow of your program based on specific criteria. 
             They’re essential for making decisions and handling different scenarios in your code!<br/><br/>
             Conditional statements in JavaScript allow you to test a condition and execute a block of code based on the result of that test.<br><br/>
-            <li>if - <b>if</b> a condition is met execute this code</li><br/>
-            <li>if - <b>else if</b> a condition 1 is not met then execute this code</li><br/>
-            <li>if - <b>else</b> if a condition 1 is not met then execute this code</li><br/>
+            <li><b>if</b> condition is met execute this code</li><br/>
+            <li><b>else if</b> condition 1 is not met then execute this code</li><br/>
+            <li><b>else</b> if condition 1 or 2 is not met then execute this code</li><br/>
             `;
 
             const codeExConditionals = `if (condition1) {<br/>

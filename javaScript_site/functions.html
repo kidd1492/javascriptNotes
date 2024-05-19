@@ -13,36 +13,47 @@
     </div>
    
 
-    <body>
-        <div class="textContainer">
-            <h1>Functions</h1><br/>
-            <table><tr>
-                <td>
-                    <h3>This function prints Hello</h3>
-                    <p>function printHello(){<br/>
-                        ....functions.innerHTML = "Hello";<br/>
-                        };</p>
-                    <button type="button" onclick="printHello()">Print Hello</button>
-                    <h1 id="functions"></h1>
-                </td>
+<body>
+               
+<div class="textContainer">
+<h3>This function prints Hello</h3>
 
-                <td>
-                <h3>This function also prints Hello</h3>
-                <p>const hello = function(){<br/>
-                    function2.innerHTML = "This function also print Hello"<br/>
-                }</p>
-                <button type="button" onclick="hello()">Print Hello</button>
+<pre>
+function printHello(){
+    functions.innerHTML = "Hello";
+};</pre>
+<button type="button" onclick="printHello()">Print Hello</button>
 
-                <h1 id="function2"></h1>
-                </td>
-                <td>
-                <h3>This function also prints Hello</h3>
-                <p>const hello = () => function2.innerHTML = "This function also print Hello"</p>
-                <button type="button" onclick="helloAgain()">Print Hello</button>
+<h1 id="functions"></h1></div>
 
-                <h1 id="function3"></h1></td>
-            </tr></table>
-        </div>
+<div class="textContainer">
+    <p>An anonymous function is created without an identifier (name).
+    It’s defined using the function keyword followed by parentheses () and curly braces {}.
+    Assign them to variables or use them directly.
+    Anonymous functions help encapsulate code and prevent polluting the global scope.</p>
+    
+<h3>This function also prints Hello</h3>
+
+<pre>
+const hello = function(){
+    function2.innerHTML = "This function also print Hello"
+}</pre>
+<button type="button" onclick="hello()">Print Hello</button>
+<h1 id="function2"></h1></div>
+
+<div class="textContainer">
+    <p>Arrow functions provide a concise syntax for defining functions.
+        They don't have their own 'this' context.
+        If your function body consists of a single expression (like in the example), you can omit the curly braces {}.
+        However, if you want to include multiple statements or need to perform additional logic, use the curly braces.
+        function2.innerHTML = "This function also print Hello"</p>
+<h3>This function also prints Hello</h3>
+
+<pre>const hello = () => function2.innerHTML = "This function also print Hello"</pre>
+<button type="button" onclick="helloAgain()">Print Hello</button>
+<h1 id="function3"></h1></div>
+           
+        
 
         <script>
             let functions = document.getElementById('functions');
@@ -54,10 +65,11 @@
             };
 
             const hello = function(){
-                function2.innerHTML = "This also print Hello"
+                function2.innerHTML = "This function also print Hello"
             };
 
             const helloAgain = () => function3.innerHTML = "This function also print Hello"
         </script>
-    </body>
+
+</body>
 </html>
