@@ -93,45 +93,77 @@ const person = {
             scriptContainer.innerHTML = codeExObjects;
             break;
 
-        case 'arrowFunction':
-            const textArrowFunction = `Arrow Functions:<br/><br/>
-                Arrow functions, introduced in ECMAScript 6 (ES6), provide a concise
-                syntax for defining functions. They are especially useful for short, one-liner functions.<br/><br/>
-                <li>Arrow functions provide a concise syntax for defining functions.</li><br/>
-                <li>They don't have their own 'this' context.</li><br/>
-                <li>If your function body consists of a single expression (like in the example), you can omit the curly braces {}.</li><br/>
-                <li>However, if you want to include multiple statements or need to perform additional logic, use the curly braces.</li>
+        case 'closure':
+            const textClosure  = `closure:<br/><br/>
+            A closure in JavaScript is a powerful concept that combines a function with 
+            references to its surrounding state (known as the lexical environment).<br/><br/>
+
+            <p>Definition: A closure is formed when an inner function (a function defined inside another function) 
+            retains access to the variables and parameters of its outer function even after the outer function has finished executing.<br/><br/>
+            Access to Outer Scope: Closures allow you to access variables from the parent scope within an inner function. 
+            This is particularly useful for creating private variables and maintaining state.</p><br/><br/>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures" target="_blank">JavaScript/Closures</a>
+
                 `;
         
-            const codeExArrowFunction = 
-                `Arrow function example:<br><br>
-                const square = (num) => num * num;<br><br/>
-                const squaredValue = square(3); // squaredValue = 9<br/><br>
-                const square = function(num){<br/>
-                ....return num * num;<br/>
-                }
-                `;
+            const codeExClosure = 
+                `Closure example:<br><br>
+<pre>
+function createCounter(num) {
+    let plus = num;
+    let count = 0; // This variable is private to the 'createCounter' function
+
+    return function increment() {
+        count += plus; // Access the 'count' variable from the outer scope
+        console.log(\`Current count: \${count}\`);
+    };
+}
+
+// Create two counters
+const counter1 = createCounter(2);
+const counter2 = createCounter(4);
+
+counter1(); // Outputs: "Current count: 1"
+counter1(); // Outputs: "Current count: 2"
+
+counter2(); // Outputs: "Current count: 1"
+counter2(); // Outputs: "Current count: 2"
+
+</pre>
+`;
         
-            textContainer.innerHTML = textArrowFunction;
-            scriptContainer.innerHTML = codeExArrowFunction;
+            textContainer.innerHTML = textClosure ;
+            scriptContainer.innerHTML = codeExClosure;
             break;
 
         case 'conditionals':
             const textConditionals = ` Conditionals allow you to control the flow of your program based on specific criteria. 
             They’re essential for making decisions and handling different scenarios in your code!<br/><br/>
             Conditional statements in JavaScript allow you to test a condition and execute a block of code based on the result of that test.<br><br/>
-            <li><b>if</b> condition is met execute this code</li><br/>
-            <li><b>else if</b> condition 1 is not met then execute this code</li><br/>
-            <li><b>else</b> if condition 1 or 2 is not met then execute this code</li><br/>
+            <br/><br/>
+<pre>
+if (condition1) {<br/>
+....// Block of code to be executed if condition1 is true<br/>
+} else if (condition2) {<br/>
+....// Block of code to be executed if condition1 is false and condition2 is true<br/>
+} else {<br/>
+....// Block of code to be executed if both condition1 and condition2 are false<br/>
+}</pre>
             `;
 
-            const codeExConditionals = `if (condition1) {<br/>
-            ....// Block of code to be executed if condition1 is true<br/>
-            } else if (condition2) {<br/>
-            ....// Block of code to be executed if condition1 is false and condition2 is true<br/>
-            } else {<br/>
-            ....// Block of code to be executed if both condition1 and condition2 are false<br/>
-            }
+            const codeExConditionals = 
+`<pre>
+const num = 10;
+if (num < 10) {
+    console.log("number is less than 10");
+} 
+else if (num > 10) {
+    console.log("number is greater than 10");
+} 
+else {
+    console.log("number is 10");
+}</pre>
+
             `;
 
             textContainer.innerHTML = textConditionals;
