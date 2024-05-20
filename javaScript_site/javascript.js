@@ -102,6 +102,33 @@ const person = {
             retains access to the variables and parameters of its outer function even after the outer function has finished executing.<br/><br/>
             Access to Outer Scope: Closures allow you to access variables from the parent scope within an inner function. 
             This is particularly useful for creating private variables and maintaining state.</p><br/><br/>
+
+            Maintaining State:<br/>
+            Closures help maintain state between events in event-driven JavaScript.
+            For example, if you want to count the number of times a button is clicked on a webpage, closures are an excellent choice. You can create a counter variable within a closure, and each time the button is clicked, the counter is updated.
+            This ensures that the counter remains private and isn’t affected by other scripts on the page.<br><br>
+            Private Variables:<br>
+            Closures allow you to create private variables by enclosing them within the closure scope.
+            These variables are not accessible from outside the closure, providing encapsulation and preventing unintended modifications.
+            For instance, you can use closures to create modules with private data and expose only specific functions or properties.<br><br>
+            Callbacks and Asynchronous Code:<br>
+            Closures are essential for handling callbacks and asynchronous operations.
+            When dealing with asynchronous tasks (e.g., fetching data from a server), you can use closures to capture the necessary context and manage state.
+            For example, when using setTimeout or making AJAX requests, closures ensure that the correct data is available when the callback executes.<br><br>
+            Currying:<br>
+            Currying is a functional programming technique where a function returns another function with some of its arguments pre-filled.
+            Closures enable currying by capturing the initial arguments and allowing subsequent partial function calls.
+            Curried functions are useful for creating reusable and composable code.<br><br>
+            Memoization:<br>
+            Memoization involves caching the results of expensive function calls to improve performance.
+            Closures can store previously computed results and return them directly if the same input is encountered again.
+            This optimization is commonly used in recursive algorithms or expensive computations.<br><br>
+            Emulating Private Variables or Encapsulation:<br>
+            JavaScript lacks true private variables, but closures allow you to emulate them.
+            By enclosing data within a closure, you create a private scope accessible only to specific functions.
+            This pattern is useful for creating clean APIs and preventing accidental modifications.<br><br>
+            There is a lot to this make a script to use each of these<br/><br/>
+            Further Reading:<br/>
             <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures" target="_blank">JavaScript/Closures</a>
 
                 `;
@@ -185,6 +212,71 @@ else {
 
             textContainer.innerHTML = textArray;
             scriptContainer.innerHTML = codeExArray;
+            break;
+
+        case 'callback': 
+            const textCallback = `In JavaScript, a callback function is a function that is passed as an argument 
+            to another function and is executed after some operation has been completed. Callbacks allow us to write 
+            asynchronous code, where we can continue to execute other code while waiting for a particular event to occur1.<br/><br/>
+
+            Here are the key points about callbacks:<br/>
+            
+            Definition:<br/>
+            A callback is a function passed as an argument to another function.
+            It is executed when the receiving function completes its task.
+            Asynchronous Execution:
+            Callbacks are essential for handling asynchronous operations, such as fetching data from a server, reading files, or handling user interactions.
+            Instead of blocking the execution, callbacks allow other code to run while waiting for the asynchronous task to finish.<br/><br/>
+            `;
+
+            const codeExCallback = `
+<pre>
+hello(leave);
+function hello(callback){
+    console.log("hello");
+    callback();    
+}
+function leave(){
+    console.log("leave")
+}
+
+function goodbuy(){
+    console.log("goodbuy");
+}
+</pre>
+            `;
+
+            textContainer.innerHTML = textCallback;
+            scriptContainer.innerHTML = codeExCallback;
+            break;
+
+        case 'asynchronous': 
+            const textasynchronous = `Asynchronous<br/><br/>
+            <li></li><br/>
+            <li></li>
+            `;
+
+            const codeExasynchronous = `
+<pre>
+function function1(callback){
+    setTimeout(() => {console.log('Task 1');
+                      callback()}, 3000);
+}
+
+
+function funtion2(){
+    console.log('task 2');
+    console.log('task 3');
+    console.log('task 4');
+}
+
+
+function1(funtion2);</pre>
+            <br/><br/>
+            `;
+
+            textContainer.innerHTML = textasynchronous;
+            scriptContainer.innerHTML = codeExasynchronous;
             break;
     }
 }
