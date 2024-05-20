@@ -217,7 +217,7 @@ else {
         case 'callback': 
             const textCallback = `In JavaScript, a callback function is a function that is passed as an argument 
             to another function and is executed after some operation has been completed. Callbacks allow us to write 
-            asynchronous code, where we can continue to execute other code while waiting for a particular event to occur1.<br/><br/>
+            asynchronous code, where we can continue to execute other code while waiting for a particular event to occur.<br/><br/>
 
             Here are the key points about callbacks:<br/>
             
@@ -227,22 +227,37 @@ else {
             Asynchronous Execution:
             Callbacks are essential for handling asynchronous operations, such as fetching data from a server, reading files, or handling user interactions.
             Instead of blocking the execution, callbacks allow other code to run while waiting for the asynchronous task to finish.<br/><br/>
+            Let’s explore a simple real-world example of callbacks to demonstrate their benefits. Imagine you’re building a weather application that fetches weather data from an external API. Callbacks are commonly used in scenarios like this, where you need to handle asynchronous operations.
+
+            Here’s how you can implement a basic weather app using callbacks:
+
+            Fetching Weather Data (Simulated):
+            Suppose you have an API endpoint that provides weather information for a specific location.
+            Simulate fetching weather data using a function that accepts a callback.
+            Displaying Weather Information:
+            Create a function that displays the weather information on your webpage.
+            This function will be called once the weather data is retrieved.<br/><br/>
+            This also cover Asynchronous:<br/><br/>
+            <a href="asynchronous.html"> Asynchronous Ex :</a>
+
             `;
 
             const codeExCallback = `
 <pre>
-hello(leave);
-function hello(callback){
-    console.log("hello");
-    callback();    
-}
-function leave(){
-    console.log("leave")
+function function1(callback){
+    setTimeout(() => {console.log('Task 1');
+                      callback()}, 3000);
 }
 
-function goodbuy(){
-    console.log("goodbuy");
+
+function function2(){
+    console.log('task 2');
+    console.log('task 3');
+    console.log('task 4');
 }
+
+
+function1(function2);
 </pre>
             `;
 
@@ -264,14 +279,14 @@ function function1(callback){
 }
 
 
-function funtion2(){
+function function2(){
     console.log('task 2');
     console.log('task 3');
     console.log('task 4');
 }
 
 
-function1(funtion2);</pre>
+function1(function2);</pre>
             <br/><br/>
             `;
 
