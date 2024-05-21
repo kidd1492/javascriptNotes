@@ -260,7 +260,7 @@ function1(function2);
             in a specific order. In JavaScript, arrays can contain any type of data, including strings, 
             numbers, objects, and even other arrays.<br/><br/>
             <li>Indexing: Each element in an array is assigned an index (position) starting from 0.</li><br/>
-            <code>array.foreach(callback);</code><br/>
+            <code>array.forEach(callback);</code><br/>
             Callback Parameters:
             <ul>
             <li>accumulator: The accumulated value.</li>
@@ -296,17 +296,184 @@ let numbers = [1, 2, 3, 4, 5];
             scriptContainer.innerHTML = codeExArray;
             break;
 
-        case 'asynchronous': 
-            const textasynchronous = `Asynchronous<br/><br/>
-            <li></li><br/>
-            <li></li>
+        case 'destructuring': 
+            const textDestructuring = `Destructuring<br/><br/>
+            <p>Destructuring in JavaScript is a powerful feature that allows you to unpack values from 
+            arrays or objects into distinct variables.</p>
+
+<pre>
+const colors = ['red', 'green', 'blue', 'black', 'white'];
+
+//asigning elements of an arry to a list of values
+    const [firstColor, secondColor, thirdColor, ...extraColors] = colors;
+    colors.forEach((element) => console.log(element));
+</pre>
+
+            <li>Object destructuring allows you to extract values from an object’s 
+                properties and assign them to variables.</li><br/>
+<pre>
+const person = { name: 'Alice', age: 30 };
+const { name, age } = person;
+console.log(name); // 'Alice'
+console.log(age); // 30
+</pre>
+            <li>You can provide default values for variables in case the property or array element doesn’t exist.</li>
             `;
 
-            const codeExasynchronous = `hello`;
+            const codeExDestructuring = `
+            <h3>More about destructuring</h3>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment" target="blank">Destructuring</a>
+<pre>
+// swapping values of vareables
+    let a = 1;
+    let b = 2;
 
-            textContainer.innerHTML = textasynchronous;
-            scriptContainer.innerHTML = codeExasynchronous;
+    [a, b] = [b, a];
+
+    //console.log(a, b);
+
+    // swapping elements in an array
+    const colors = ['red', 'green', 'blue', 'black', 'white'];
+
+    [colors[0], colors[4]] = [colors[4], colors[0]];
+
+    //console.log(colors);
+</pre>
+            `;
+
+            titleEx.innerHTML = "Destructuring"
+            textContainer.innerHTML = textDestructuring;
+            scriptContainer.innerHTML = codeExDestructuring;
             break;
+
+        case 'class': 
+            const textClass = `Class<br/><br/>
+            <p>In JavaScript, classes provide a way to create reusable templates for creating objects. 
+            They encapsulate data along with methods that operate on that data. Let’s explore the key 
+            aspects of classes in JavaScript:</p>
+            <li>You can define a class using either a class declaration or a class expression.</li><br/>
+            <h3>class declaration</h3>
+<pre>
+class Person{
+    constructor(name, age){
+        this.name = name;
+        this.age = age;
+    }
+    greet(){
+        console.log(\`Hello, I'm \${this.name}! I need a friend\`);
+    }
+}
+
+const alice = new Person("Alice", 30);
+const john = new Person("John", 35);
+console.log(alice.name);
+console.log(alice.greet());
+</pre>
+
+            <li>a constructor is a special function used to create 
+            and initialize objects. Constructors serve as blueprints for creating multiple 
+            objects with similar properties and methods.</li><br/>
+            Class Declaration: Used for named classes with a fixed name. Supports inheritance and strict rules.<br/><br/>
+            Class Expression: from what I see it's asigning a class to a variable?? Yes it seems to be! Used for 
+            anonymous classes or when redefining classes. More flexible and allows anonymous instances.
+            In practice, classes are often defined using class declarations, but class expressions offer additional 
+            flexibility when needed.
+            `;
+
+            const codeExClass = `
+            
+                        
+            Ok I created these people already but it was an object what's the difference?
+            <br/>Let’s compare creating an object using a constructor function (as above) with creating a class.<br/><br/>
+            Both approaches serve similar purposes, but they have some key differences:<br/><br/>
+            <ul>
+            <li>Classes support inheritance through the extends keyword.</li>
+            <li>Use classes when possible, especially for more complex scenarios.</li>
+            <li>Looks like key difference is Inheritance</li>
+            </ul><br/><br>
+            <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Classes_in_JavaScript" target="blank">More about classes in javaScript</a>
+            `;
+
+            titleEx.innerHTML = "Class"
+            textContainer.innerHTML = textClass;
+            scriptContainer.innerHTML = codeExClass;
+            break;
+
+        case 'inheritance': 
+            const textInheritance = `Inheritance<br/><br/>
+            <h3>How Inheritance Works in This Example</h3>
+
+            <h3>Base Class (Parent Class): Animal</h3> 
+            <p>The Animal class serves as the base class or parent class. It defines two properties:</p> 
+            <ul> <li><strong>alive</strong>: A boolean property set to true.</li> <li>Two methods: <ul> <li><code>eat()</code>: Prints a message indicating that the animal is eating.</li> <li><code>sleep()</code>: Prints a message indicating that the animal is sleeping.</li> </ul> </li> </ul>
+
+            <h3>Derived Classes (Child Classes): Rabbit, Fish, and Hawk</h3> 
+            <p>These classes inherit from the Animal class, which means they automatically have access to its properties and methods.</p> 
+            <p>Each derived class introduces its own properties (name) and methods (run(), swim(), and fly()).</p>
+
+            <h3>Specifics of Each Derived Class:</h3> 
+            <ul> <li><strong>Rabbit</strong>: <ul> <li>Inherits from Animal.</li> <li>Has an additional property <code>name</code> set to “rabbit”.</li> <li>Introduces a method <code>run()</code> that prints a message indicating that the rabbit is running.</li> </ul> </li> <li><strong>Fish</strong>: <ul> <li>Inherits from Animal.</li> <li>Has an additional property <code>name</code> set to “fish”.</li> <li>Introduces a method <code>swim()</code> that prints a message indicating that the fish is swimming.</li> </ul> </li> <li><strong>Hawk</strong>: <ul> <li>Inherits from Animal.</li> <li>Has an additional property <code>name</code> set to “hawk”.</li> <li>Introduces a method <code>fly()</code> that prints a message indicating that the hawk is flying.</li> </ul> </li> </ul>
+
+            <h3>Creating Instances:</h3> 
+            <p>We create instances of each derived class:</p> 
+            <ul> <li><strong>rabbit</strong>: An instance of Rabbit.</li> <li><strong>fish</strong>: An instance of Fish.</li> <li><strong>hawk</strong>: An instance of Hawk.</li> </ul>
+
+            <h3>Method Calls:</h3> 
+            <p>We call methods on the instances:</p> 
+            <ul> <li><code>rabbit.alive</code>: Accesses the <code>alive</code> property inherited from Animal. Since <code>alive</code> is true, it prints true.</li> <li><code>rabbit.eat()</code>: Calls the <code>eat()</code> method inherited from Animal, printing a message about the rabbit eating.</li> <li><code>rabbit.run()</code>: Calls the <code>run()</code> method specific to the Rabbit class, printing a message about the rabbit running.</li> </ul>
+
+            <p>In summary, inheritance allows child classes (Rabbit, Fish, and Hawk) to inherit properties and methods from the parent class (Animal). Each child class can also introduce its own unique properties and methods. The instances of these classes can then access and use the inherited and specific properties/methods. 😊🐇🐠🦅</p>
+                        `;
+
+            const codeExInheritance = `
+<pre>
+inheritance allows a child class to inherit properties and 
+   methods from an existing parent class*/
+   
+    class Animal{
+        alive = true;
+
+        eat(){
+            console.log(\`This \${this.name} is eating\`);
+        }
+
+        sleep(){
+            console.log(\`This \${this.name} is sleeping\`);
+        }
+    }
+
+    class Rabbit extends Animal{
+        name = "rabbit";
+        run(){console.log(\`This \${this.name} is running\`);}
+    }
+
+    class Fish extends Animal{
+        name = "fish";
+        swim(){console.log(\`This \${this.name} is swimming\`);}       
+    }
+
+    class Hawk extends Animal{
+        name = "hawk";
+        fly(){console.log(\`This \${this.name} is flyinging\`);}
+    }
+
+    const rabbit = new Rabbit();
+    const fish = new Fish();
+    const hawk = new Hawk();
+
+    console.log(rabbit.alive);
+    rabbit.eat();
+    rabbit.run();
+
+</pre>
+            `;
+
+            titleEx.innerHTML = "Inheritance"
+            textContainer.innerHTML = textInheritance;
+            scriptContainer.innerHTML = codeExInheritance;
+            break;
+
+        
     }
 }
 
