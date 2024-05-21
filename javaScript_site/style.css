@@ -14,6 +14,7 @@ body{
 }
 
 button{
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin: 0; 
     padding:2px;
     border: none;
@@ -22,13 +23,24 @@ button{
     background-color: rgba(205, 202, 214, 0.904);
 }
 
+button:hover{
+    background-color: rgba(205, 202, 214, 0.406);
+}
+
+
 #navigation{
     width: 100%;
     background-color: rgba(205, 202, 214, 0.904);
 }
 
 #titleContainer{
-    background-color: white);
+    background-color: white;
     height: 30vh;
 }
 
+.buttonRow{
+    width: auto;
+    padding: 15px;
+    display: flex;
+    background-color: white;
+}

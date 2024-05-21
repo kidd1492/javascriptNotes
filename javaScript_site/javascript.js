@@ -31,7 +31,7 @@ const variable = 3.14\;<br/>\
 var variable = "A string"\;<br/>\
 </pre>';
                             
-
+            titleEx.innerHTML = "Variable"
             textContainer.innerHTML = textVariable;
             scriptContainer.innerHTML = codeExVariable;
             break;
@@ -59,42 +59,13 @@ function functionName(argument, argument) {
 }</pre><br/>
                 
                 `;
-
+            titleEx.innerHTML = "Functions"
             textContainer.innerHTML = textFunction;
             scriptContainer.innerHTML = codeExFunction;
             break;
 
-        case 'objects':
-            const textObjects = `What is an Object?<br/><br/>
-            An object is a composite data type that represents a collection of related data and functionality.
-            It allows you to group properties (key-value pairs) and methods (functions) together.<br/><br/>
-                <li>You can access object properties using dot notation or square brackets:</li>
-                <li>You can add or modify properties dynamically:</li><br/><br/>
-                this Keyword:<br/><br/>
-                <li>Inside an object method, this refers to the object itself.</li>
-                <li>It allows you to access object properties and methods from within the method.</li><br/><br/>
-                <a href="objects.html">Javascript Object Ex.</a>
-                `;
-
-            const codeExObjects = 
-                `Object Literal Syntax:<br><br>
-<pre>
-const person = {
-    name: "Alice",
-    age: 30,
-    greet: function() {
-      console.log(\`Hello, I'm \${this.name}!\`);
-    }
-  };  
-</pre>
-                `;
-        
-            textContainer.innerHTML = textObjects ;
-            scriptContainer.innerHTML = codeExObjects;
-            break;
-
         case 'closure':
-            const textClosure  = `closure:<br/><br/>
+            const textClosure  = `Closure:<br/><br/>
             A closure in JavaScript is a powerful concept that combines a function with 
             references to its surrounding state (known as the lexical environment).<br/><br/>
 
@@ -158,10 +129,42 @@ counter2(); // Outputs: "Current count: 2"
 
 </pre>
 `;
-        
-            textContainer.innerHTML = textClosure ;
+            titleEx.innerHTML = "Closure"
+            textContainer.innerHTML = textClosure;
             scriptContainer.innerHTML = codeExClosure;
             break;
+
+        case 'objects':
+            const textObjects = 
+            `What is an Object?<br/><br/>
+            An object is a composite data type that represents a collection of related data and functionality.
+            It allows you to group properties (key-value pairs) and methods (functions) together.<br/><br/>
+            <li>You can access object properties using dot notation or square brackets:</li>
+            <li>You can add or modify properties dynamically:</li><br/><br/>
+            this Keyword:<br/><br/>
+            <li>Inside an object method, this refers to the object itself.</li>
+            <li>It allows you to access object properties and methods from within the method.</li><br/><br/>
+            <a href="objects.html">Javascript Object Ex.</a>`;
+
+            const codeExObjects = 
+                `Object Literal Syntax:<br><br>
+<pre>
+const person = {
+    name: "Alice",
+    age: 30,
+    greet: function() {
+      console.log(\`Hello, I'm \${this.name}!\`);
+    }
+  };  
+</pre>
+                `;
+        
+            titleEx.innerHTML = "Objects"   
+            textContainer.innerHTML = textObjects ;
+            scriptContainer.innerHTML = codeExObjects;
+            break;
+
+
 
         case 'conditionals':
             const textConditionals = ` Conditionals allow you to control the flow of your program based on specific criteria. 
@@ -193,25 +196,9 @@ else {
 
             `;
 
+            titleEx.innerHTML = "Conditionals"
             textContainer.innerHTML = textConditionals;
             scriptContainer.innerHTML = codeExConditionals;
-            break;
-
-        case 'array': 
-            const textArray = `An array is a data structure that holds a collection of values (elements) 
-            in a specific order. In JavaScript, arrays can contain any type of data, including strings, 
-            numbers, objects, and even other arrays.<br/><br/>
-            <li>Indexing: Each element in an array is assigned an index (position) starting from 0.</li><br/>
-            <li>JavaScript syntax requires properties beginning with a digit to be accessed using bracket notation</li>
-            `;
-
-            const codeExArray = `An array is a data structure that holds a collection of values (elements) 
-            in a specific order. In JavaScript, arrays can contain any type of data, including strings, 
-            numbers, objects, and even other arrays.<br/><br/>
-            `;
-
-            textContainer.innerHTML = textArray;
-            scriptContainer.innerHTML = codeExArray;
             break;
 
         case 'callback': 
@@ -261,8 +248,52 @@ function1(function2);
 </pre>
             `;
 
+            titleEx.innerHTML = "Callback"
             textContainer.innerHTML = textCallback;
             scriptContainer.innerHTML = codeExCallback;
+            break;
+
+
+        
+        case 'array': 
+            const textArray = `An array is a data structure that holds a collection of values (elements) 
+            in a specific order. In JavaScript, arrays can contain any type of data, including strings, 
+            numbers, objects, and even other arrays.<br/><br/>
+            <li>Indexing: Each element in an array is assigned an index (position) starting from 0.</li><br/>
+            <code>array.foreach(callback);</code><br/>
+            Callback Parameters:
+            <ul>
+            <li>accumulator: The accumulated value.</li>
+            <li>element: The current element being processed.</li>
+            <li>index: The index of the current element.</li>
+            <li>array: The original array being reduced.</li><br/><br/>
+            <a href="array.html">Array Examples</a>
+            `;
+
+            const codeExArray = `
+<pre>
+let numbers = [1, 2, 3, 4, 5];
+
+        numbers.forEach(square);
+        numbers.forEach(display);
+
+        function double(element, index, array){
+          array[index] = element * 2;
+        }
+
+        function square(element, index, array){
+            array[index] = Math.pow(element, 2);
+        }
+
+        function display(element){
+            console.log(element)
+
+        }
+</pre>`;
+
+            titleEx.innerHTML = "Array"
+            textContainer.innerHTML = textArray;
+            scriptContainer.innerHTML = codeExArray;
             break;
 
         case 'asynchronous': 
@@ -271,27 +302,12 @@ function1(function2);
             <li></li>
             `;
 
-            const codeExasynchronous = `
-<pre>
-function function1(callback){
-    setTimeout(() => {console.log('Task 1');
-                      callback()}, 3000);
-}
-
-
-function function2(){
-    console.log('task 2');
-    console.log('task 3');
-    console.log('task 4');
-}
-
-
-function1(function2);</pre>
-            <br/><br/>
-            `;
+            const codeExasynchronous = `hello`;
 
             textContainer.innerHTML = textasynchronous;
             scriptContainer.innerHTML = codeExasynchronous;
             break;
     }
 }
+
+        
