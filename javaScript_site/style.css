@@ -1,8 +1,14 @@
 body{
+    background-color: gainsboro;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding:5px;
     text-align: center;
 }
 
 .textContainer{
+    border: 2px solid blue;
+    text-overflow: wrap;
     text-align: left;
     font-size: 1.2rem;
     font-family: Arial, Helvetica, sans-serif;
@@ -10,17 +16,17 @@ body{
     width: auto;
     padding: 20px;
     margin: 20px 0px 0px 10px;
-    background: linear-gradient(180deg, #bdcfe2, #ece7e8);
+    background: rgba(255, 255, 255, 0.8);
 }
 
 button{
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.3);
     margin: 0; 
     padding:2px;
     border: none;
     width: 100px;
     height: 35px;
-    background-color: rgba(205, 202, 214, 0.904);
+    
 }
 
 button:hover{
@@ -29,12 +35,21 @@ button:hover{
 
 
 #navigation{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px;
     width: 100%;
-    background-color: rgba(205, 202, 214, 0.904);
+    
 }
 
 #titleContainer{
-    background-color: white;
+    color:white;
+    background-image: url('header.png');
+    background-size: cover;
+    padding: 5px;
     height: 30vh;
 }
 
