@@ -56,9 +56,8 @@ function functionName(argument, argument) {
     Code to exicute;
     //\Functions can return a value using the return keyword.
     return result;
-}</pre><br/>
-                
-                `;
+}</pre><br/>`;
+
             titleEx.innerHTML = "Functions"
             textContainer.innerHTML = textFunction;
             scriptContainer.innerHTML = codeExFunction;
@@ -100,9 +99,7 @@ function functionName(argument, argument) {
             This pattern is useful for creating clean APIs and preventing accidental modifications.<br><br>
             There is a lot to this make a script to use each of these<br/><br/>
             Further Reading:<br/>
-            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures" target="_blank">JavaScript/Closures</a>
-
-                `;
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures" target="_blank">JavaScript/Closures</a>`;
         
             const codeExClosure = 
                 `Closure example:<br><br>
@@ -127,8 +124,8 @@ counter1(); // Outputs: "Current count: 2"
 counter2(); // Outputs: "Current count: 1"
 counter2(); // Outputs: "Current count: 2"
 
-</pre>
-`;
+</pre>`;
+
             titleEx.innerHTML = "Closure"
             textContainer.innerHTML = textClosure;
             scriptContainer.innerHTML = codeExClosure;
@@ -156,8 +153,7 @@ const person = {
       console.log(\`Hello, I'm \${this.name}!\`);
     }
   };  
-</pre>
-                `;
+</pre>`;
         
             titleEx.innerHTML = "Objects"   
             textContainer.innerHTML = textObjects ;
@@ -178,8 +174,7 @@ if (condition1) {<br/>
 ....// Block of code to be executed if condition1 is false and condition2 is true<br/>
 } else {<br/>
 ....// Block of code to be executed if both condition1 and condition2 are false<br/>
-}</pre>
-            `;
+}</pre>`;
 
             const codeExConditionals = 
 `<pre>
@@ -192,9 +187,7 @@ else if (num > 10) {
 } 
 else {
     console.log("number is 10");
-}</pre>
-
-            `;
+}</pre>`;
 
             titleEx.innerHTML = "Conditionals"
             textContainer.innerHTML = textConditionals;
@@ -225,9 +218,7 @@ else {
             Create a function that displays the weather information on your webpage.
             This function will be called once the weather data is retrieved.<br/><br/>
             This also cover Asynchronous:<br/><br/>
-            <a href="asynchronous.html"> Asynchronous Ex :</a>
-
-            `;
+            <a href="asynchronous.html"> Asynchronous Ex :</a>`;
 
             const codeExCallback = `
 <pre>
@@ -338,8 +329,7 @@ console.log(age); // 30
     [colors[0], colors[4]] = [colors[4], colors[0]];
 
     //console.log(colors);
-</pre>
-            `;
+</pre>`;
 
             titleEx.innerHTML = "Destructuring"
             textContainer.innerHTML = textDestructuring;
@@ -465,8 +455,7 @@ inheritance allows a child class to inherit properties and
     rabbit.eat();
     rabbit.run();
 
-</pre>
-            `;
+</pre>`;
 
             titleEx.innerHTML = "Inheritance"
             textContainer.innerHTML = textInheritance;
@@ -519,8 +508,7 @@ const user2 = new User("Bobby");
 user1.sayHello();
 console.log(user2.username);
 console.log(User.userCount);
-</pre>
-            `;
+</pre>`;
 
             titleEx.innerHTML = "Static Super"
             textContainer.innerHTML = textStaticSuper;
@@ -548,7 +536,7 @@ console.log(User.userCount);
     <h3>Example:</h3>
     <p>Consider the following JavaScript code snippet:</p>
     <pre><code>const paragraphs = document.querySelectorAll("p");
-alert(paragraphs[0].nodeName);</code></pre>
+    alert(paragraphs[0].nodeName);</code></pre>
     <p>In this example, <code>querySelectorAll("p")</code> returns a list of all &lt;p&gt; elements in the document.</p>
     <p>We access the first paragraph’s <code>nodeName</code> property (which is “P”) using the DOM.</p>
 
@@ -564,7 +552,6 @@ alert(paragraphs[0].nodeName);</code></pre>
     <p>Remember that the DOM is essential for creating dynamic and interactive web content. It enables developers to modify page structure, style, and content programmatically! 😊🌐</p>
 
     <p>For more detailed information, you can refer to the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction" target="_blank" rel="noopener noreferrer">MDN documentation on the DOM</a>.</p>
-            
             `;
 
             titleEx.innerHTML = "DOM"
@@ -581,8 +568,7 @@ alert(paragraphs[0].nodeName);</code></pre>
             <li>getElementsByClassName() returns a collection of objects sharing that class</li>
             <li>getElementsByTagName() returns a collection of objects</li><br/><br/>
             <li>querySelector() will return the first matching element .for class #forId</li>
-            <li>querySelectorAll() returns a nodelist and it has built in methods forEach()</li></ul>
-            `;
+            <li>querySelectorAll() returns a nodelist and it has built in methods forEach()</li></ul>`;
 
             const codeExGetElementBy = `
 <pre>
@@ -617,8 +603,7 @@ alert(paragraphs[0].nodeName);</code></pre>
         fru.forEach(fru => {
             fru.style.color = "blue";
         });
-</pre>
-            `;
+</pre>`;
 
             titleEx.innerHTML = "getElementBy-- querySelector--"
             textContainer.innerHTML = textGetElementBy;
@@ -659,8 +644,7 @@ console.log(min);
 console.log(sec);
 console.log(milsec);
 console.log(now);   //1716400148167
-</pre>
-            `;
+</pre>`;
             codeExDate = ` `;
 
             titleEx.innerHTML = "getElementBy-- querySelector--"
@@ -684,17 +668,14 @@ const myArray = [10, 20, 30, 40, 50];
 // Using for...of to iterate over elements
 for (const element of myArray) {
   console.log(element);
-}</pre>
-
-            `;
+}</pre>`;
             const codeExForLoop = `
 <pre>
 let n = 10;
 for(let i = 0; i < n; i++){
     console.log(i);
 };
-</pre>
-            `;
+</pre> `;
 
             titleEx.innerHTML = "for Loops"
             textContainer.innerHTML = textForLoop;
@@ -717,14 +698,87 @@ while (count <= 5) {
   console.log(count); // Print the current value of 'count'
   count++; // Increment the counter
 }
-</pre>
-                `;
+</pre>`;
                 
                 titleEx.innerHTML = "while Loops"
                 textContainer.innerHTML = textWhileLoop;
                 scriptContainer.innerHTML = codeWhileLoop ;
                 break;
-        
+
+            case 'eventListener':
+                const texteventListener = `
+                element.addEventListener("event", callback);
+<pre>                
+// const box = document.getElementById('box');
+const box = document.querySelector("#box");
+box.addEventListener('click', function(event){
+    box.style.backgroundColor = "red";
+});
+
+box.addEventListener('mouseover', function(event){
+    box.style.backgroundColor = "green";
+});
+
+box.addEventListener('mouseout', function(event){
+    box.style.backgroundColor = "yellow";
+});</pre>
+                `;
+
+
+                const codeExeventListener = `
+
+            <h3>Mouse Events:</h3>
+            <ul>
+                <li>click: Fired when an element is clicked.</li>
+                <li>dblclick: Fired when an element is double-clicked.</li>
+                <li>mousedown: Fired when the mouse button is pressed down on an element.</li>
+                <li>mouseup: Fired when the mouse button is released after being pressed.</li>
+                <li>mousemove: Fired when the mouse pointer moves over an element.</li>
+                <li>mouseover: Fired when the mouse pointer enters an element.</li>
+                <li>mouseout: Fired when the mouse pointer leaves an element.</li>
+                <li>contextmenu: Fired when the right mouse button is clicked (context menu).</li>
+            </ul>
+
+            <h3>Keyboard Events:</h3>
+            <ul>
+                <li>keydown: Fired when a key is pressed down.</li>
+                <li>keyup: Fired when a key is released.</li>
+                <li>keypress: Fired when a key produces a character (not for all keys).</li>
+            </ul>
+
+            <h3>Form Events:</h3>
+            <ul>
+                <li>submit: Fired when a form is submitted.</li>
+                <li>input: Fired when the value of an input field changes.</li>
+                <li>change: Fired when the value of a form element (like &lt;select&gt; or &lt;input type="checkbox"&gt;) changes.</li>
+            </ul>
+
+            <h3>Window Events:</h3>
+            <ul>
+                <li>load: Fired when the page finishes loading.</li>
+                <li>unload: Fired when the page is about to be unloaded (e.g., when navigating away).</li>
+                <li>resize: Fired when the window is resized.</li>
+                <li>scroll: Fired when the user scrolls the page.</li>
+            </ul>
+
+            <h3>Focus Events:</h3>
+            <ul>
+                <li>focus: Fired when an element receives focus (e.g., when clicked or tabbed into).</li>
+                <li>blur: Fired when an element loses focus.</li>
+            </ul>
+
+            <h3>Other Events:</h3>
+            <p>There are many other specialized events, such as:</p>
+            <ul>
+                <li>dragstart, dragend, dragover, drop (for drag-and-drop interactions).</li>
+                <li>touchstart, touchmove, touchend (for touch devices).</li>
+                <li>animationstart, animationend, transitionend (for CSS animations and transitions).</li>
+            </ul>`;
+                
+                titleEx.innerHTML = "while Loops"
+                textContainer.innerHTML = texteventListener;
+                scriptContainer.innerHTML = codeExeventListener ;
+                break;  
     }
 }
 
