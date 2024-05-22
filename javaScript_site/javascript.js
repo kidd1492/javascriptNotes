@@ -472,7 +472,258 @@ inheritance allows a child class to inherit properties and
             textContainer.innerHTML = textInheritance;
             scriptContainer.innerHTML = codeExInheritance;
             break;
+            
+        case 'staticSuper': 
+            const textStaticSuper = `Static:<br/><br/>
+            <ul>
+            <li>static members are useful when you want to store data or define methods 
+            that are relevant to the entire class, rather than individual instances. </li>
+            <li>You can think of static properties as class-level variables, and static methods 
+            as utility methods that don’t depend on instance-specific data.</li>
+            <li>Static properties and methods are accessed directly on the class <code>User.userCount</code></li>
+            </ul><br/><br>
+            Super:<br/><br>
 
+            The super keyword is used to access properties on an object literal or a class’s prototype, or to invoke a superclass’s
+             constructor.<br/><br/>
+            It can be used in two ways:<br/><br/>
+            As a “function call” (super(...args)): In the constructor body of a derived class (with extends), 
+            you can call super(...args) before using this. It calls the parent class’s constructor and binds the 
+            parent class’s public fields. After that, the derived class’s constructor can further access and 
+            modify this.<br/><br/>
+            As a “property lookup” (super.prop or super[expr]): This form allows you to access methods and properties 
+            of an object literal’s or class’s prototype.
+            `;
+
+            const codeExStaticSuper = `
+<pre>           
+class User{
+    static userCount = 0;
+
+    constructor(username){
+        this.username = username;
+        User.userCount++;
+    }
+
+    sayHello(){
+        console.log(\`Hello, my username is \${this.username}\`)
+    }
+
+    static getUserCount(){
+        console.log(User.getUserCount);
+    }
+}
+
+const user1 = new User("Chris");
+const user2 = new User("Bobby");
+user1.sayHello();
+console.log(user2.username);
+console.log(User.userCount);
+</pre>
+            `;
+
+            titleEx.innerHTML = "Static Super"
+            textContainer.innerHTML = textStaticSuper;
+            scriptContainer.innerHTML = codeExStaticSuper;
+            break;
+
+        case 'dom':
+            const textDom = `
+            console.dir(document);<br/>
+            document.title = "Page Name";
+            `;
+
+            const codeExDom = `
+            <h3>What is the DOM?</h3>
+    <p>The Document Object Model (DOM) is a programming interface for web documents.</p>
+    <p>It represents the structure and content of a document (such as an HTML or XML document) in memory, allowing programs to interact with it.</p>
+    <p>The DOM views a web page as a collection of nodes and objects, which can be manipulated using programming languages like JavaScript.</p>
+
+    <h3>Nodes and Objects:</h3>
+    <p>The DOM represents the document as a tree structure.</p>
+    <p>Each node in the tree corresponds to a part of the document (e.g., an HTML element, text, or attribute).</p>
+    <p>Nodes are organized into a logical hierarchy, with the entire document represented as the root node.</p>
+    <p>Objects in the DOM correspond to these nodes, allowing programming languages to connect to and manipulate the page.</p>
+
+    <h3>Example:</h3>
+    <p>Consider the following JavaScript code snippet:</p>
+    <pre><code>const paragraphs = document.querySelectorAll("p");
+alert(paragraphs[0].nodeName);</code></pre>
+    <p>In this example, <code>querySelectorAll("p")</code> returns a list of all &lt;p&gt; elements in the document.</p>
+    <p>We access the first paragraph’s <code>nodeName</code> property (which is “P”) using the DOM.</p>
+
+    <h3>Core and Extended APIs:</h3>
+    <p>The DOM is built using multiple APIs that work together.</p>
+    <p>The core DOM defines entities describing any document and the objects within it.</p>
+    <p>Other APIs (such as the HTML DOM API and SVG API) add new features and capabilities to the DOM.</p>
+
+    <h3>JavaScript and the DOM:</h3>
+    <p>JavaScript interacts with the DOM to access and manipulate web pages.</p>
+    <p>The DOM is not part of the JavaScript language itself but is a Web API used to build websites.</p>
+    <p>JavaScript provides the model for web pages, allowing developers to work with HTML, SVG, and XML documents.</p>
+    <p>Remember that the DOM is essential for creating dynamic and interactive web content. It enables developers to modify page structure, style, and content programmatically! 😊🌐</p>
+
+    <p>For more detailed information, you can refer to the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction" target="_blank" rel="noopener noreferrer">MDN documentation on the DOM</a>.</p>
+            
+            `;
+
+            titleEx.innerHTML = "DOM"
+            textContainer.innerHTML = textDom;
+            scriptContainer.innerHTML = codeExDom;
+            break;
+
+        case 'getElementBy':
+            const textGetElementBy = `
+            console.dir(document);<br/>
+            document.title = "Page Name";<br/><br/>
+            <ul>
+            <li>getElementById() returns a single element or null</li>
+            <li>getElementsByClassName() returns a collection of objects sharing that class</li>
+            <li>getElementsByTagName() returns a collection of objects</li><br/><br/>
+            <li>querySelector() will return the first matching element .for class #forId</li>
+            <li>querySelectorAll() returns a nodelist and it has built in methods forEach()</li></ul>
+            `;
+
+            const codeExGetElementBy = `
+<pre>
+/* DOM Document Object Model
+        console.dir(document)
+        console.log(document.getElementById('myh1').textContent);
+        let h1Elements = document.getElementsByTagName('h1');
+        console.log(h1Elements[1].textContent); */
+    
+        // getElementById() returns a single element or null
+        const myh1 = document.getElementById('myh1');
+        myh1.style.backgroundColor = 'yellow';
+        myh1.style.textAlign = "center";
+
+        //getElementsByClassName() returns a collection of objects sharing that class
+        //Can TypeCast toArray() or Array.from(var_name) to use forEach() 
+        const fruits = document.getElementsByClassName('fruits');
+        //console.log(fruits);
+        fruits[0].style.backgroundColor = "yellow";
+
+        //getElementsByTagName() returns a collection of objects
+        const h4Elements = document.getElementsByTagName('h4');
+        h4Elements[1].style.backgroundColor = "orange";
+
+        //querySelector() will return the first matching element .for class #forId
+        const element = document.querySelector('.fruits')
+        console.log(element);
+
+        //querySelectorAll() returns a nodelist and it has built in methods forEach()
+        const fru = document.querySelectorAll('.fruits');
+        fru[1].style.backgroundColor = "red";
+        fru.forEach(fru => {
+            fru.style.color = "blue";
+        });
+</pre>
+            `;
+
+            titleEx.innerHTML = "getElementBy-- querySelector--"
+            textContainer.innerHTML = textGetElementBy;
+            scriptContainer.innerHTML = codeExGetElementBy;
+            break;
+
+        case 'date':
+            textDate = `
+<pre>
+/*let time = document.getElementById('time');    
+
+function currentTime(){
+    let date = new Date()
+    time.innerHTML = date;
+    second();
+}
+
+function second(){
+    setTimeout(currentTime, 1000);     
+}*/
+
+const date = new Date();
+
+const day = date.getDay();
+const month = date.getMonth();
+const year = date.getFullYear();
+const hour = date.getHours();
+const min  = date.getMinutes();
+const sec = date.getSeconds();
+const milsec = date.getMilliseconds();
+const now = date.getTime();
+
+console.log(day);    
+console.log(month);
+console.log(year);
+console.log(hour);
+console.log(min);
+console.log(sec);
+console.log(milsec);
+console.log(now);   //1716400148167
+</pre>
+            `;
+            codeExDate = ` `;
+
+            titleEx.innerHTML = "getElementBy-- querySelector--"
+            textContainer.innerHTML = textDate;
+            scriptContainer.innerHTML = codeExDate;
+            break;
+
+        case 'forLoops':
+            const textForLoop = `
+            <h3>The for loop repeats a block of code until a specified condition evaluates to false.</h3>
+<pre>
+for (initialization; condition; afterthought) {
+    // Code to execute
+    }</pre><br/>
+
+            <p>the for...of loop provides a concise way to iterate over elements in an array. It allows you to 
+            directly access each element without using an index.</p><br/>
+<pre>
+const myArray = [10, 20, 30, 40, 50];
+
+// Using for...of to iterate over elements
+for (const element of myArray) {
+  console.log(element);
+}</pre>
+
+            `;
+            const codeExForLoop = `
+<pre>
+let n = 10;
+for(let i = 0; i < n; i++){
+    console.log(i);
+};
+</pre>
+            `;
+
+            titleEx.innerHTML = "for Loops"
+            textContainer.innerHTML = textForLoop;
+            scriptContainer.innerHTML = codeExForLoop;
+            break;
+
+        case 'whileLoops':
+                const textWhileLoop = `
+                <p>A while loop is a control flow statement that repeatedly executes a block of 
+                code as long as a specified condition remains true. It’s useful when you want to 
+                repeat an action until a certain condition is no longer met.</p>
+                `;
+
+
+                const codeWhileLoop = `
+<pre>
+let count = 1; // Initialize a counter
+
+while (count <= 5) {
+  console.log(count); // Print the current value of 'count'
+  count++; // Increment the counter
+}
+</pre>
+                `;
+                
+                titleEx.innerHTML = "while Loops"
+                textContainer.innerHTML = textWhileLoop;
+                scriptContainer.innerHTML = codeWhileLoop ;
+                break;
         
     }
 }
