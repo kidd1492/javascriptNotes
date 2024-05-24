@@ -721,7 +721,9 @@ box.addEventListener('mouseover', function(event){
 
 box.addEventListener('mouseout', function(event){
     box.style.backgroundColor = "yellow";
-});</pre>
+});</pre><br/><br/>
+
+                <a href="eventListener.html">Example view page source</a>
                 `;
 
 

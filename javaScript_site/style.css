@@ -21,7 +21,7 @@ body{
 
 button{
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.3);
-    margin: 0; 
+    margin: 2px; 
     padding:2px;
     border: none;
     width: 100px;
@@ -50,6 +50,7 @@ button:hover{
     background-image: url('header.png');
     background-size: cover;
     padding: 5px;
+    margin-bottom: 10px;
     height: 30vh;
 }
 
