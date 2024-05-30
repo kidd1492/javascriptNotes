@@ -179,28 +179,30 @@ const person = {
         case 'conditionals':
             const textConditionals = ` Conditionals allow you to control the flow of your program based on specific criteria. 
             They’re essential for making decisions and handling different scenarios in your code!<br/><br/>
-            Conditional statements in JavaScript allow you to test a condition and execute a block of code based on the result of that test.<br><br/>
+            Conditional statements in Python allow you to test a condition and execute a block of code based on the result of that test.<br><br/>
             <br/><br/>
 <pre>
-if (condition1) {<br/>
-....// Block of code to be executed if condition1 is true<br/>
-} else if (condition2) {<br/>
-....// Block of code to be executed if condition1 is false and condition2 is true<br/>
-} else {<br/>
-....// Block of code to be executed if both condition1 and condition2 are false<br/>
+if condition:
+    # code to execute if condition is true
+elif another_condition:
+    # code to execute if another_condition is true
+else:
+    # code to execute if none of the above conditions are true
 }</pre>`;
 
             const codeExConditionals = 
 `<pre>
 const num = 10;
-if (num < 10) {
-    console.log("number is less than 10");
-} 
-else if (num > 10) {
-    console.log("number is greater than 10");
-} 
-else {
-    console.log("number is 10");
+x = 10
+y = 20
+
+if x > y:
+    print("x is greater than y")
+elif x < y:
+    print("x is less than y")
+else:
+    print("x and y are equal")
+
 }</pre>`;
 
             titleEx.innerHTML = "Conditionals"
