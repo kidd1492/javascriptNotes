@@ -247,39 +247,71 @@ else:
 
         
         case 'array': 
-            const textArray = `An array is a data structure that holds a collection of values (elements) 
-            in a specific order. In JavaScript, arrays can contain any type of data, including strings, 
-            numbers, objects, and even other arrays.<br/><br/>
-            <li>Indexing: Each element in an array is assigned an index (position) starting from 0.</li><br/>
-            <code>array.forEach(callback);</code><br/>
-            Callback Parameters:
-            <ul>
-            <li>accumulator: The accumulated value.</li>
-            <li>element: The current element being processed.</li>
-            <li>index: The index of the current element.</li>
-            <li>array: The original array being reduced.</li><br/><br/>
-            <a href="array.html">Array Examples</a>
+            const textArray = `
+            <h3>In Python, arrays are a collection of items stored at contiguous memory locations, and they are used to store multiple values of the same type under a single variable name.</h3>
+<p>Here’s what you need to know about arrays in Python:</p>
+
+<h3>Python Lists as Arrays</h3>
+<ul>
+  <li>Python does not have built-in support for arrays like some other languages, but you can use lists to achieve similar functionality.</li><br>
+</ul>
+
+<h3>Creating Arrays</h3>
+<ul>
+  <li>You can create arrays in Python by importing the array module from the standard library. This allows you to create a typed array that contains elements of the specified type.</li><br>
+</ul>
+
+<h3>Accessing Elements</h3>
+<ul>
+  <li>You can access array elements using their index number. In Python, indices start at 0.</li><br>
+</ul>
+
+<h3>Adding Elements</h3>
+<ul>
+  <li>Use the append() method to add an element to the end of an array, or the insert() method to add an element at a specific index.</li><br>
+</ul>
+
+<h3>Removing Elements</h3>
+<ul>
+  <li>The pop() method removes an element at a specified index, while the remove() method removes the first occurrence of a specified value.</li><br>
+</ul>
+
+<h3>Array Operations</h3>
+<ul>
+  <li>You can perform operations like looping through elements, finding the length of an array using len(), and sorting the elements.</li><br>
+</ul>
+
+<h3>NumPy Arrays</h3>
+<ul>
+  <li>For more advanced array operations, especially for numerical data, the NumPy library is commonly used. NumPy arrays are optimized for numerical computations and support a wide range of mathematical operations.</li><br>
+</ul>
             `;
 
             const codeExArray = `
 <pre>
-let numbers = [1, 2, 3, 4, 5];
+import array as arr
 
-        numbers.forEach(square);
-        numbers.forEach(display);
+# Create an array of integers
+numbers = arr.array('i', [1, 2, 3, 4, 5])
 
-        function double(element, index, array){
-          array[index] = element * 2;
-        }
+# Access elements
+print(numbers[0])  # Output: 1
 
-        function square(element, index, array){
-            array[index] = Math.pow(element, 2);
-        }
+# Add elements
+numbers.append(6)
+numbers.insert(2, 99)
 
-        function display(element){
-            console.log(element)
+# Remove elements
+numbers.pop()
+numbers.remove(99)
 
-        }
+# Get array length
+print(len(numbers))  # Output: 5
+
+# Loop through the array
+for number in numbers:
+    print(number)
+
 </pre>`;
 
             titleEx.innerHTML = "Array"
@@ -355,40 +387,37 @@ my_car = Car('Tesla', 'Model S', 2020)
 
         case 'date':
             textDate = `
-<pre>
-/*let time = document.getElementById('time');    
+            from datetime import datetime
 
-function currentTime(){
-    let date = new Date()
-    time.innerHTML = date;
-    second();
-}
+            <li>Get the current date and time
+            current_date_time = datetime.now()
+            print("Current date and time:", current_date_time)</li>
 
-function second(){
-    setTimeout(currentTime, 1000);     
-}*/
+            <li>Create a specific date
+            specific_date = datetime(2020, 5, 17)
+            print("Specific date:", specific_date)</li>
 
-const date = new Date();
+            <li>Format the date
+            formatted_date = current_date_time.strftime("%B %d, %Y")
+            print("Formatted date:", formatted_date)</li>
+            `;
 
-const day = date.getDay();
-const month = date.getMonth();
-const year = date.getFullYear();
-const hour = date.getHours();
-const min  = date.getMinutes();
-const sec = date.getSeconds();
-const milsec = date.getMilliseconds();
-const now = date.getTime();
+            codeExDate = `
+<pre>from datetime import datetime
 
-console.log(day);    
-console.log(month);
-console.log(year);
-console.log(hour);
-console.log(min);
-console.log(sec);
-console.log(milsec);
-console.log(now);   //1716400148167
-</pre>`;
-            codeExDate = ` `;
+# Get the current date and time
+current_date_time = datetime.now()
+print("Current date and time:", current_date_time)
+
+# Create a specific date
+specific_date = datetime(2020, 5, 17)
+print("Specific date:", specific_date)
+
+# Format the date
+formatted_date = current_date_time.strftime("%B %d, %Y")
+print("Formatted date:", formatted_date)
+</pre>
+            `;
 
             titleEx.innerHTML = "getElementBy-- querySelector--"
             textContainer.innerHTML = textDate;

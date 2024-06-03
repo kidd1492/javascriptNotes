@@ -843,6 +843,133 @@ box.addEventListener('mouseout', function(event){
                 textContainer.innerHTML = textJson;
                 scriptContainer.innerHTML = codeExJson;
                 break;
+
+            case 'asyncAwait' : 
+                const textAsyncAwait = `
+                async Function: When you add the async keyword before a function definition, it transforms 
+                the function into an asynchronous function.<br /><br/>
+                Using async and await for API calls in DevOps scripts can streamline the process of handling asynchronous operations, 
+                such as interacting with remote servers or services. Here’s how you can use them in a practical scenario:
+
+                Making API Calls: When you’re working with APIs, you often need to make HTTP requests to various endpoints. 
+                These requests are inherently asynchronous because they involve waiting for a response from the server.
+                Handling Responses: Once the API call is made, you need to handle the response, which might involve parsing JSON data, 
+                error handling, or updating the state of your application or script.
+                Here’s an example of how you might use async and await in a DevOps script to make API calls:
+                `;
+
+                const codeExAsyncAwait = `
+<pre>
+
+// This is your unique API key from OpenWeather
+const apiKey = 'YOUR_API_KEY';
+
+// Function to fetch weather data for a city
+async function fetchWeather(city) {
+    const url = \`https://api.openweathermap.org/data/2.5/weather?q=\${city}&appid=\${apiKey}\`;
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(\`HTTP error! status: \${response.status}\`);
+        }
+        const data = await response.json();
+        displayWeather(data);
+    } catch (error) {
+        console.error('Error fetching weather:', error);
+    }
+}
+
+// Function to display weather data
+function displayWeather(data) {
+    const weatherDiv = document.getElementById('weather');
+    weatherDiv.innerHTML = \`
+        <div>City: \${data.name}</div>
+        <div>Temperature: \${data.main.temp} K</div>
+        <div>Weather: \${data.weather[0].main}</div>
+    \`;
+}
+
+// Fetch weather data for a specific city
+fetchWeather('London');
+</pre>
+                `;
+
+                titleEx.innerHTML = "Async/Await"
+                textContainer.innerHTML = textAsyncAwait;
+                scriptContainer.innerHTML = codeExAsyncAwait;
+                break;
+
+            case 'fetch' : 
+                const textFetch = `
+                <h3>The Fetch Function in JavaScript</h3>
+    <ul>
+        <li><strong>Promise-Based:</strong> fetch returns a promise, which resolves to a Response object representing the response of the request.</li><br/>
+        <li><strong>Syntax:</strong> The basic syntax of fetch is fetch(url, [options]), where url is the resource you want to fetch, and options is an object containing any custom settings that you want to apply to the request.</li><br/>
+        <li><strong>GET Requests:</strong> By default, fetch makes a GET request to the specified URL. However, you can specify other methods like POST, PUT, DELETE, etc., in the options parameter.</li><br/>
+        <li><strong>Handling Responses:</strong> To access the response body, you use methods like .json(), .text(), .blob(), etc., on the Response object. These methods also return promises, which resolve with the actual data.</li><br/>
+        <li><strong>Error Handling:</strong> fetch only rejects a promise if the request fails due to network issues. HTTP errors like 404 or 500 do not reject the promise; instead, they are reflected in the ok status of the Response object.</li><br/>
+        <li><strong>Advanced Features:</strong> The Fetch API supports advanced features like CORS, streaming responses, and aborting requests.</li>
+    </ul>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch" target="blank">Fetch API</a>`;
+
+                const codeExFetch = `
+<pre>
+async function fetchData() {
+    try {
+      const response = await fetch('https://api.example.com/data');
+      if (!response.ok) {
+        throw new Error(\`HTTP error! status: \${response.status}\`);
+      }
+      const data = await response.json();
+      console.log(data);
+    } catch (error) {
+      console.error('Fetch error:', error);
+    }
+  }
+  
+  fetchData();
+</pre>
+                `;
+
+
+                titleEx.innerHTML = "fetch"
+                textContainer.innerHTML = textFetch;
+                scriptContainer.innerHTML = codeExFetch ;
+                break;
+
+            case '.then' : 
+            const textThen = `
+            <h3>The .then() Method in JavaScript</h3>
+    <ul>
+        <li><strong>Syntax:</strong> The .then() method takes up to two callback functions as arguments. The first callback is executed if the promise is fulfilled, and the second is executed if the promise is rejected.</li>
+        <li><strong>Chaining:</strong> .then() returns a new promise, which allows you to chain multiple .then() calls together. Each one waits for the previous promise to settle before executing.</li>
+        <li><strong>Handling Values:</strong> If the promise is fulfilled, the value it's resolved with is passed to the onFulfilled callback. You can then return a value from onFulfilled, which will be wrapped in a new promise for the next .then() in the chain.</li>
+        <li><strong>Error Handling:</strong> If the promise is rejected, the onRejected callback receives the reason for rejection. If you omit the onRejected callback, the rejection will be forwarded to the next .then() or .catch() for handling.</li>
+    </ul>
+    <h3>Example of using .then():</h3>
+            `;
+            const codeExThen = `
+<pre>
+    fetch('https://api.example.com/data')
+        .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+        })
+        .then(data => {
+        console.log('Data received:', data);
+        })
+        .catch(error => {
+        console.error('There has been a problem with your fetch operation:', error);
+        });
+</pre>
+            `;
+
+            titleEx.innerHTML = ".then";
+            textContainer.innerHTML = textThen;
+            scriptContainer.innerHTML = codeExThen;
+            break;
     }
 }
 
